@@ -1,0 +1,8 @@
+[{
+    "id": "help",
+    "children":
+    [{
+        "caption": "Easy Import", "id": "easy_import", "command": "easy_import"
+    }]
+}]
+
