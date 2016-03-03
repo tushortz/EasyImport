@@ -2,7 +2,10 @@
     "id": "help",
     "children":
     [{
-        "caption": "Easy Import", "id": "easy_import", "command": "easy_import"
+    	"caption": "Easy Import", "id": "a",
+        "children": [{
+        	"caption": "Easy Import", "id": "easy_import", "command": "easy_import"
+        }]
     }]
 }]
 

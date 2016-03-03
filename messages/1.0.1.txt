@@ -1,0 +1,4 @@
+EasyImport 1.0.1
+-----------------
+
+Only run code if there is an import ; in the file

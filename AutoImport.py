@@ -22,22 +22,27 @@ class Easy_importCommand(sublime_plugin.TextCommand):
 		scope = (view.scope_name(0).split(" ")[0].split(".")[1])
 
 		if scope == "java":
-			view.erase(edit, sublime.Region(0, view.size()))
+			if "import " in content:
+				view.erase(edit, sublime.Region(0, view.size()))
 
-			formatted = sorted(set(getImports(content)))
-			previous_import = re.findall(r'import (.*);\n', content)
+				formatted = sorted(set(getImports(content)))
 
-			final = ""
-			formatted += previous_import
-			formatted = sorted(set(formatted))
-			for item in formatted:
-				item = ("import %s;\n" % item).replace(";;", ";")
-				final += item
+				previous_import = re.findall(r'import (.*);\n', content)
+				final = ""
+				formatted += previous_import
+				formatted = sorted(set(formatted))
+				for item in formatted:
+					item = ("import %s;\n" % item).replace(";;", ";")
+					final += item
 
-			pattern = re.compile(r"import.*;")
-			content = pattern.sub("ddd", content)
-			c = content.count("ddd")
-			content = (content.replace("ddd\n", "!`#~") )
-			content = content.replace("!`#~" * c, final)
+				pattern = re.compile(r"import.*;")
+				content = pattern.sub("ddd", content)
+				c = content.count("ddd")
+				content = (content.replace("ddd\n", "!`#~") )
+				content = content.replace("!`#~" * c, final)
 
-			view.insert(edit, 0, content)
+				# Incase of errors, just add an empty space
+				content = content.replace("!`#~", "")
+
+				view.insert(edit, 0, content)
+				sublime.status_message("Easy Import: Classes Imported")
