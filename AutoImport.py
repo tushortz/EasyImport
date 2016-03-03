@@ -22,9 +22,8 @@ class Easy_importCommand(sublime_plugin.TextCommand):
 		scope = (view.scope_name(0).split(" ")[0].split(".")[1])
 
 		if scope == "java":
-			if "import " in content:
+			if "import " in content.lower():
 				view.erase(edit, sublime.Region(0, view.size()))
-
 				formatted = sorted(set(getImports(content)))
 
 				previous_import = re.findall(r'import (.*);\n', content)
