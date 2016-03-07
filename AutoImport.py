@@ -1,5 +1,5 @@
 import sublime, sublime_plugin
-from .Packages.javase import javapack
+from .Packages.java_ import javapack
 import re
 
 def getImports(texts):

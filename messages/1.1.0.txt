@@ -1,0 +1,8 @@
+EasyImport 1.1.0
+-----------------
+
+* Added support for Javafx
+* Disable support for pacakges beginning with `_`
+* Disables support for all `java.lang` classes
+
+To enable, find the package and uncomment all the java.lang values in Packages/javase
