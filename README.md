@@ -14,8 +14,9 @@ Click on the Sublime text `Menu` –> `Help` –> `Easy Import`.
 
 ## Usage
 
-> **IMPORTANT:** You must have a comment at the top of where you want to import all the classes,
-In the comment, there must be an `import` word followed by an `empty space` and ends with a `semi-colon` otherwise it will give wierd texts.
+> **IMPORTANT:** If there was no previously imported class, you must have a comment at the top of where you want to import all the classes.
+
+> For example: In the comment, there must be an `import` word followed by an `empty space` and ends with a `semi-colon` otherwise it will give wierd texts.
 
 Example:
 ```java

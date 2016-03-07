@@ -1,0 +1,4 @@
+EasyImport 1.0.2
+-----------------
+
+* Removed support for Sublime text 2
